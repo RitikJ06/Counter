@@ -5,18 +5,13 @@ function incrementCount(){
     counter.innerText = currentCount;
 }
 
-function decrementCount(){
+function resetCount(){
     let counter = document.getElementsByClassName('count')[0];
-    currentCount = parseInt(counter.innerText);
-    if(currentCount > 0){
-        currentCount -= 1;
-    }
-    counter.innerText = currentCount;
+    counter.innerText = '0';
 }
-
 
 let incrementBtn = document.getElementById('increment');
 incrementBtn.addEventListener('click', incrementCount);
 
-let decrementBtn = document.getElementById('decrement');
-decrementBtn.addEventListener('click', decrementCount);
+let resetBtn = document.getElementById('reset');
+resetBtn.addEventListener('click', resetCount);
