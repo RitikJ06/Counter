@@ -4,14 +4,24 @@ function incrementCount(){
     currentCount += 1;
     counter.innerText = currentCount;
 }
+function decrementCount(){
+    let counter = document.getElementsByClassName('count')[0];
+    currentCount = parseInt(counter.innerText);
+
+    currentCount = currentCount <= 0 ? 0 : currentCount - 1;
+    counter.innerText = currentCount;
+}
 
 function resetCount(){
     let counter = document.getElementsByClassName('count')[0];
     counter.innerText = '0';
 }
 
-let incrementBtn = document.getElementById('increment');
+let incrementBtn = document.getElementsByClassName('increment')[0];
 incrementBtn.addEventListener('click', incrementCount);
 
-let resetBtn = document.getElementById('reset');
+let decrementBtn = document.getElementsByClassName('decrement')[0];
+decrementBtn.addEventListener('click', decrementCount);
+
+let resetBtn = document.getElementsByClassName('reset')[0];
 resetBtn.addEventListener('click', resetCount);
